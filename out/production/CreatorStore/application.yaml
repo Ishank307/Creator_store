@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: CreatorStore
+
+    # Database information
+    datasource:
+      url:
+      username:
+      password:
+
+    # jpa orm
+    jpa:
+      hibernate:
+        ddl-auto:
