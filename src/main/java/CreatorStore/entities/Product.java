@@ -1,5 +1,6 @@
 package CreatorStore.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -37,6 +38,7 @@ public class Product {
     private Integer stockQuantity;
 
     //TODO:relations
+    @JsonBackReference
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
 }

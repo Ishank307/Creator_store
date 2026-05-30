@@ -1,6 +1,7 @@
 package CreatorStore.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
@@ -35,6 +36,7 @@ public class OrderItem {
     private Order order;
 
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn(name = "product_id",nullable = false)
     private Product product;
 }
