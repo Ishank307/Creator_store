@@ -5,10 +5,9 @@ import CreatorStore.entities.Order;
 import CreatorStore.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -20,6 +19,21 @@ public class OrderController {
     @PostMapping
     public Order createOrder(@Valid @RequestBody OrderRequest orderRequest){
         return orderService.createOrder(orderRequest);
+    }
+
+    @GetMapping
+    public List<Order> getAllOrder(){
+    return orderService.getOrders();
+    }
+
+    @GetMapping("{id}")
+    public Order getOrderById(@PathVariable Long id){
+        return orderService.getOrdersById(id);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteOrderById(@PathVariable Long id){
+         orderService.deleteOrdersById(id);
     }
 
 }

@@ -26,7 +26,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getProducts(Long id){
+    public List<Product> getProducts(){
         return productService.getProducts();
     }
 
@@ -34,7 +34,7 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id){
         return  productService.getProductById(id);
     }
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable Long id ){
         productService.deleteProduct(id);
     }
