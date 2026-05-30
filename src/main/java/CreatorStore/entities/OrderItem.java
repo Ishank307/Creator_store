@@ -1,5 +1,6 @@
-package app.vercel.ishankresume.creatorstore.entities;
+package CreatorStore.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
@@ -28,6 +29,7 @@ public class OrderItem {
     @Column(nullable = false)
     private BigDecimal priceAtPurchase;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="order_id",nullable = false)
     private Order order;

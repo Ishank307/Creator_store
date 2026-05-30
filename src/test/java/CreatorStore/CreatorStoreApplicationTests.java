@@ -1,4 +1,4 @@
-package app.vercel.ishankresume.creatorstore;
+package CreatorStore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

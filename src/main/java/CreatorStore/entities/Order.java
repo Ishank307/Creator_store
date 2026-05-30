@@ -1,6 +1,7 @@
-package app.vercel.ishankresume.creatorstore.entities;
+package CreatorStore.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,7 +33,8 @@ public class Order {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy="order")
+    @JsonManagedReference
+    @OneToMany(mappedBy="order",cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
     @PrePersist

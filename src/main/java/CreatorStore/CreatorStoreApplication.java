@@ -1,4 +1,4 @@
-package app.vercel.ishankresume.creatorstore;
+package CreatorStore;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;

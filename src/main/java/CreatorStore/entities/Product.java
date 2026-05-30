@@ -1,4 +1,4 @@
-package app.vercel.ishankresume.creatorstore.entities;
+package CreatorStore.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -27,7 +27,7 @@ public class Product {
     @NotNull(message = "category is required")
     private String category;
 
-    @NotNull(message = "Prive is required")
+    @NotNull(message = "Price is required")
     @DecimalMin(value="0.0",inclusive=false,message = "price cant be less than zero")
     private BigDecimal price;
 
